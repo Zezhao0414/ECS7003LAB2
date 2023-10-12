@@ -166,9 +166,13 @@ public class PlayerController : MonoBehaviour
                     Debug.Log(minDistance);
                     if (lastMostClose != -1)
                     {
+                        Rotator rt1 = pickupList[lastMostClose].GetComponent<Rotator>();
+                        rt1.ifActice = false;
                         GameController.SetBack(lastMostClose);
                     }
                     GameController.HighLightGreen(i);
+                    Rotator rt2 = pickupList[i].GetComponent<Rotator>();
+                    rt2.ifActice = true;
                     lastMostClose = i;
                 }              
             }
